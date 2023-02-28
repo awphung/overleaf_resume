@@ -1,0 +1,165 @@
+\documentclass[]{resume-openfont}
+
+\pagestyle{fancy}
+\resetHeaderAndFooter
+
+%--------------------------------------------------------------
+% Convenience command - make it easy to fill template
+
+% Create job position command. Parameters: company, position, location, when
+\newcommand{\resumeHeading}[4]{\runsubsection{\uppercase{#1}}\descript{ | #2}\hfill\location{#3 | #4}\fakeNewLine}
+
+% Create education heading. Parameters: Name, degree, location, when
+\newcommand{\educationHeading}[4]{\runsubsection{#1}\hspace*{\fill}  \location{#3 | #4}\\
+\descript{#2}\fakeNewLine}
+
+% Create project heading. Parameters: Name, link, Tech stack
+\newcommand{\projectHeading}[3]{\Project{#1}{#2}
+\descript{#3}\\}
+
+\newcommand{\projectHeadingWithDate}[4]{\Project{#1}{#2}
+\descript{#3 | #4}\\}
+
+% Parameters: courses
+\newcommand{\courseWork}[1]{\textbf{Coursework:} #1}
+
+% Parameters: courses
+\newcommand{\teacherAssistant}[1]{\textbf{Teacher Assistant (TA):} #1}
+ 
+%--------------------------------------------------------------
+\begin{document}
+
+%--------------------------------------------------------------
+%     Profile
+%--------------------------------------------------------------
+\newcommand{\yourName}{Anthony Phung}
+% How you want it to show up on the resume
+\newcommand{\yourWebsite}{website.com}
+% vs how you want it to show up. If it's the same you can just replace "\yourWebsiteLink" with "yourWebsite"
+\newcommand{\yourWebsiteLink}{https://website.com}
+\newcommand{\yourEmail}{phunga1@myumanitoba.ca}
+\newcommand{\yourPhone}{(431) 688-6665}
+\newcommand{\githubUserName}{myGithubName}
+\newcommand{\linkedInUserName}{linkedInUsername}
+
+% An alternate profile section 
+% \alignProfileTable
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%     \ralewayBold{\href{\yourWebsiteLink}{\Large \yourName}} & 
+%     Email : \href{mailto:\yourEmail}{\yourEmail}
+%     \\
+%     \href{https://github.com/\githubUserName}{GitHub://\githubUserName} & 
+%     Mobile : \yourPhone
+%     \\
+%     \href{https://www.linkedin.com/in/\linkedInUserName}{LinkedIn://\linkedInUserName} & Website : \href{\yourWebsiteLink}{\yourWebsite}
+%     \\
+% \end{tabular*}
+
+\begin{center}
+    \Huge \scshape \latoRegular{\yourName} \\ \vspace{1pt}
+    \small \href{mailto:\yourEmail}{\underline{\yourEmail}}  $|$  \yourPhone %$|$ 
+   %\href{https://www.linkedin.com/in/\linkedInUserName}{\underline{linkedIn/\linkedInUserName}} $|$
+    %\href{https://github.com/\githubUserName}{\underline{github/\githubUserName}} 
+    % $|$ \href{\yourWebsiteLink}{\underline{\yourWebsite}}
+\end{center}
+
+%--------------------------------------------------------------
+%     Education
+%--------------------------------------------------------------
+
+%\teacherAssistant{World Wide Web Information Systems Development}
+\section{Experience}
+
+\resumeHeading{G3 Canada Limited}{Junior Developer}{Winnipeg, MB}{Sep 2022 - Dec 2022}
+\begin{bullets}
+     \item Designed and prototyped a web app that worked in tandem with Azure Purview's data glossary - providing instant access to the data glossary
+     \item Introduced the Azure Purview Data Governance Platform to the data team by providing a comprehensive tech demo to over 50 employees and executives - successfully securing resources for integrating the platform
+     \item Created and managed continuous deployment pipelines in Azure Dev Ops for data pipelines and applications - providing a seamless and safe automated process to update any data pipeline
+     \item Adapted a logic app that matched strings together with a percentage similarity - previously a stored procedure that would take twice as long to call
+     \item Translated 4 data pipelines from Microsoft SQL Server to Azure Data factory - increasing data integration and monitoring capabilities greatly
+     \end{bullets}
+\sectionsep
+\resumeHeading{G3 Canada Limited}{Business Analyst}{Winnipeg, MB}{Jan 2022 – Aug 2022}
+\begin{bullets}
+     \item Built the framework for a REST API that communicates with a new train booking and tracking web application - removed the dependence on daily requests to an antiquated Excel document
+     \item Maximized the efficiency of the QA process by including standardized testing instructions in development tickets and tasks - decreasing QA times drastically
+     \item Prepared business-metric reports using PowerBI and Microsoft Azure data cubes that delivered information to both development and business teams - decreasing the amount of meeting minutes spent on reviewing goals
+\end{bullets}
+\sectionsep
+
+
+%---------------------------------------------------------------
+%        Skills
+%---------------------------------------------------------------
+
+\section{Education}
+% Put school first and degree second if your school is reputable
+\educationHeading{BSc. Computer Science Major (Co-op)}{University of Manitoba}{Winnipeg, MB}{Expected May 2024}
+
+\courseWork{Data Structures and Algorithms, Databases, Object Oriented Programming, Software Engineering, AI}
+\sectionsep
+
+\section{Skills}
+%\begin{skillList}
+%    \singleItem{Languages:}{Java, C++, Python, C\#, PHP, Prolog, Bash, C, Racket, SQL}
+%    \\
+%    \singleItem{Web Development:}{React, JavaScript, TypeScript, HTML/CSS}
+%    \\
+%    \singleItem{Technology:}{Git, AWS, GCP, Azure, Docker, Unity, Apache, \LaTeX, MongoDB, DynamoDB, Neo4j}
+%\end{skillList}
+
+% A more concise alternate 
+ \begin{skillList}
+     \doubleItem{Languages:}{Java, Javascript, C, Python, Kotlin, Dart, HTML/CSS}%
+     {Databases:}{SQL (Microsoft SQL Server), NoSQL (MongoDB)}
+     \\
+     \doubleItem{Technologies:}{Git, Azure, VIM, Android Studio, Figma}%
+     {Frameworks/Libraries:}{React, Flutter, Material Design}%
+     \\
+ \end{skillList}
+ \sectionsep
+
+%--------------------------------------------------------------
+%     Experience
+%--------------------------------------------------------------
+
+%--------------------------------------------------------------
+%     Projects
+%--------------------------------------------------------------
+\section{Projects}
+
+\projectHeadingWithDate{Cupboard Recipes App}{}{Dart, Flutter, Figma}{Ongoing}
+\begin{bullets}
+        \item Dart-based recipe app that additionally acts as a macro nutrient tracker and calorie counter
+        \item Flutter is being used for its extensive UI libraries, Figma is being used for the mockups
+        \end{bullets}
+\sectionsep
+\projectHeadingWithDate{Personal Website}{}{Node.js, React, MongoDB}{Ongoing}
+\begin{bullets}
+     \item A personal website where photographs are displayed in a gallery for viewing, as well as any ongoing coding projects
+    \end{bullets}
+\sectionsep
+\projectHeadingWithDate{Thirsty App}{}{Kotlin, Android Studio, Google Cloud Services API, XML}{Jan 2022}
+\begin{bullets}
+     \item A simple Android app that directs you to the nearest body of water from the entered location in the search bar if the user is thirsty
+     \item The app also included a water tracker as an additional feature
+     \end{bullets}
+
+\sectionsep
+
+% Example using bullets and dates 
+% \projectHeadingWithDate{Hogwart\textquotesingle{}s Library Management System}{https://github.com/Aarif123456/hogwartslibrary}{PHP, JavaScript, HTML, CSS, MySQL}{Aug 2019}
+% \begin{bullets}
+    % \item A full-stack library management system, where users can manage books and holds on their accounts. Users can search the library\textquotesingle{}s catalogue, which has every book mentioned in the Harry Potter series. The system distinguishes between 4 users. For examples, librarians who can also check or return books on behalf of users.\\
+% \end{bullets}
+% \sectionsep
+  
+ 
+\section{Extra Curricular}
+ \projectHeading{University of Manitoba Photography Club | General Executive}{}{Sept 2019-Present}
+\begin{bullets}
+     \item Assisted in running workshops in the darkroom pertaining to film development, scanning, and portraiture
+     \item Planned several photo walks and events throughout the city and campus
+\end{bullets}
+ 
+\end{document}
